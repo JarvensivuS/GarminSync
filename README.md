@@ -1,4 +1,4 @@
-# Fitness Activity Tracker
+# Health, Fitness & Sleep Activity Tracker
 
 A full-stack application that integrates with Garmin Connect to track and analyze fitness activities, designed to demonstrate API integration, data processing, and visualization capabilities.
 
