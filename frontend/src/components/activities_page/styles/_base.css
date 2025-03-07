@@ -1,0 +1,40 @@
+/* Base Layout and Structure */
+.activities-wrapper {
+    position: relative;
+    z-index: var(--z-activities);
+    margin-top: -20vh;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.activities-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 8rem 0;
+    transform: var(--scroll-transform, translateY(0));
+    opacity: var(--scroll-opacity, 1);
+}
+
+.activities-background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, var(--activities-bg-opacity-start, 0.1)) 0%,
+        rgba(0, 0, 0, var(--activities-bg-opacity-end, 0.3)) 100%
+    );
+    backdrop-filter: blur(var(--activities-bg-blur, 1px));
+}
+
+.activities-content {
+    position: relative;
+    z-index: 1;
+}
+
+.section-header {
+    font-size: 2rem;
+    color: var(--color-text-primary);
+    text-align: center;
+    margin-bottom: 2rem;
+}

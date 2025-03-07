@@ -1,0 +1,219 @@
+  /* Variables */
+  :root {
+      --dark-bg: #1e293b;
+      --text-color: #e2e8f0;
+      --accent-color: #818cf8;
+      --success-color: #10b981;
+      --grid-color: rgba(255, 255, 255, 0.2);
+      --hover-bg: rgba(71, 85, 105, 0.95);
+    }
+    
+  /* Container styles */
+  .overview-container {
+    height: 500px;
+    background-color: var(--dark-bg);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styles */
+  .overview-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .overview-title {
+    color: var(--text-color);
+    flex-grow: 1;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 0.05em;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .info-button {
+    color: var(--accent-color);
+  }
+  
+  /* Tooltip styles */
+  .custom-tooltip {
+    background-color: var(--dark-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 0.25rem;
+    padding: 1rem;
+    min-width: 200px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    pointer-events: all;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    z-index: 1000;
+  }
+  
+  .tooltip-title {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 0.05em;
+  }
+  
+  .tooltip-content {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .tooltip-pb {
+    color: var(--accent-color);
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .tooltip-percentage {
+    color: var(--success-color);
+    font-size: 0.875rem;
+  }
+  
+  /* Radar chart styles */
+  .radar-container {
+    flex-grow: 1;
+    position: relative;
+  }
+  
+  .radar-grid {
+    stroke: var(--grid-color);
+    stroke-width: 1px;
+  }
+  
+  .radar-axis {
+    fill: var(--text-color);
+    font-size: 14px;
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 0.05em;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .radar-shape {
+    stroke: #818cf8;
+    fill: #818cf8;
+    fill-opacity: 0.6;
+    transition: fill-opacity 0.3s ease;
+  }
+
+  .recharts-radar:hover .radar-shape {
+    fill-opacity: 0.8;
+  }
+
+  .recharts-tooltip-wrapper {
+    pointer-events: auto !important;
+    z-index: 1000;
+  }
+
+  /* Quick stats styles */
+  .quick-stats-container {
+    background-color: var(--dark-bg);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1);
+    transform: translateZ(0); /* Force GPU acceleration */
+    backface-visibility: hidden;
+  }
+  
+  .quick-stats-title {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 0.05em;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  .stat-item:hover {
+    background-color: var(--hover-bg);
+    transform: translateX(4px);
+  }
+  
+  .stat-label, .stat-value {
+    color: var(--text-color);
+    font-family: 'Monument Extended', sans-serif;
+    letter-spacing: 0.05em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .stat-value {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .stat-value-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .stat-percentage {
+    color: var(--success-color);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    min-width: 3.5rem;
+    text-align: center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .overview-container {
+      height: auto;
+      min-height: 400px;
+    }
+  
+    .stat-item {
+      padding: 0.5rem;
+    }
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }

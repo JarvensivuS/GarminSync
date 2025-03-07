@@ -1,0 +1,43 @@
+/* Performance Optimizations */
+.gpu-accelerated {
+    transform: var(--transform-gpu);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+}
+
+/* Transitions */
+.transition-standard {
+    transition: 
+        transform var(--transition-standard),
+        opacity var(--transition-standard);
+}
+
+/* Common effects */
+.text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.glass-effect {
+    backdrop-filter: blur(var(--section-blur));
+    -webkit-backdrop-filter: blur(var(--section-blur));
+}
+
+/* Visibility utilities */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transition: var(--transition-opacity), visibility 0.3s ease;
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .hover-effect {
+        display: none;
+    }
+}

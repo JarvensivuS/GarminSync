@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Fitness Activity Tracking Application"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!-- Preload critical videos -->
+    <link 
+      rel="preload" 
+      as="video" 
+      href="/videos/landing_bg.webm" 
+      type="video/webm"
+    />
+    <link 
+      rel="preload"
+      as="video"
+      href="/videos/activity_bg.webm"
+      type="video/webm"
+    />
+
+    <!-- Preload font files -->
+    <link 
+      rel="preload" 
+      href="%PUBLIC_URL%/fonts/MonumentExtended-Regular.otf" 
+      as="font" 
+      type="font/opentype" 
+      crossorigin 
+    />
+    <link 
+      rel="preload" 
+      href="%PUBLIC_URL%/fonts/MonumentExtended-Ultrabold.otf" 
+      as="font" 
+      type="font/opentype" 
+      crossorigin 
+    />
+
+    <!-- Font fallback to prevent layout shift -->
+    <style>
+      @font-face {
+        font-family: 'Monument Extended';
+        src: url('%PUBLIC_URL%/fonts/MonumentExtended-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Monument Extended';
+        src: url('%PUBLIC_URL%/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+        font-weight: bold;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Prevent Flash of Unstyled Content -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+      }
+      .font-loading {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+      .fonts-loaded {
+        font-family: 'Monument Extended', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+    </style>
+
+    <title>Project VitaLink</title>
+  </head>
+  <body class="font-loading">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!-- Font loading script -->
+    <script>
+      if ("fonts" in document) {
+        Promise.all([
+          document.fonts.load("1em Monument Extended"),
+          document.fonts.load("bold 1em Monument Extended")
+        ]).then(() => {
+          document.body.classList.remove("font-loading");
+          document.body.classList.add("fonts-loaded");
+        });
+      } else {
+        // Fallback for browsers that don't support font loading API
+        document.body.classList.remove("font-loading");
+        document.body.classList.add("fonts-loaded");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+.dashboard-card {
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(16px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card .MuiCardContent-root {
+    padding: 1.5rem;
+}
+
+.dashboard-card .MuiTypography-h6 {
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.dashboard-card .MuiTypography-h4 {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Chart customizations */
+.recharts-tooltip-wrapper .recharts-tooltip-item {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.recharts-polar-grid-angle line,
+.recharts-polar-grid-concentric path {
+    stroke: rgba(255, 255, 255, 0.2);
+}
+
+.recharts-polar-angle-axis-tick text {
+    fill: rgba(255, 255, 255, 0.87);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .dashboard-card .MuiTypography-h4 {
+        font-size: 1.5rem;
+    }
+    
+    .dashboard-card .MuiTypography-h6 {
+        font-size: 0.875rem;
+    }
+}

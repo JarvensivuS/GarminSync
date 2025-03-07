@@ -1,0 +1,88 @@
+/* Import order is important */
+@import './_reset.css';
+@import './_variables.css';
+@import './_loading.css';
+@import './_mixins.css';
+
+/* Font Definitions */
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('../../public/fonts/MonumentExtended-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('../../public/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: var(--font-monument);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+/* Transition Animations */
+/* Fade transitions */
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity var(--transition-standard);
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity var(--transition-standard);
+}
+
+/* Slide transitions */
+.slide-enter {
+    transform: translateX(100%);
+}
+.slide-enter-active {
+    transform: translateX(0);
+    transition: transform var(--transition-standard);
+}
+.slide-exit {
+    transform: translateX(0);
+}
+.slide-exit-active {
+    transform: translateX(-100%);
+    transition: transform var(--transition-standard);
+}
+
+/* Print styles */
+@media print {
+    .video-background,
+    .background-overlay,
+    .scroll-indicator {
+        display: none;
+    }
+    
+    .quantum-text,
+    .subtitle-text {
+        color: black;
+        text-shadow: none;
+    }
+}
+
+/* Material UI overrides */
+.MuiCircularProgress-root {
+    color: var(--color-teal) !important;
+}

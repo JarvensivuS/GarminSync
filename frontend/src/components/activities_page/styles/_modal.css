@@ -1,0 +1,28 @@
+/* Modal Styles */
+.activity-detail-modal {
+    position: relative;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(1px);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.detail-tabs {
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modal-content {
+    position: relative;
+    z-index: var(--z-modal);
+}

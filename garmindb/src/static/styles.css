@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styles */
+.container {
+    width: 80%; /* Ensure it takes full width */
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden; /* Prevent overflow from affecting layout */
+}
+
+/* Header Styles */
+header {
+    background-color: #ff9100cb;
+    color: #ffffff;
+    padding: 10px 0; /* Increased padding for better appearance */
+    text-align: center;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Table Wrapper Styles */
+.table-wrapper {
+    flex: 1;
+    overflow-y: auto; /* Adds vertical scroll if content overflows */
+    margin: 20px 0; /* Margin between header and footer */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    table-layout: fixed; /* Ensures uniform column widths */
+}
+
+/* Column Widths */
+table th, table td {
+    padding: 5px; /* Reduced padding for compactness */
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.9em; /* Smaller font size */
+    height: 30px; /* Fixed height for rows */
+    word-wrap: break-word; /* Wrap text within cells */
+}
+
+/* Header Styles */
+table th {
+    background-color: #ff9100cb;
+    color: #ffffff;
+    position: sticky;
+    top: 0; /* Keeps the header fixed at the top when scrolling */
+    z-index: 2; /* Ensures header stays on top of other content */
+}
+
+/* Alternating Row Colors */
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #ff9100cb;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.8em;
+}

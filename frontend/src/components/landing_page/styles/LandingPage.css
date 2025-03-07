@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('../../../../public/fonts/MonumentExtended-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Monument Extended';
+    src: url('../../../../public/fonts/MonumentExtended-Ultrabold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Background Styles */
+.landing-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.video-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    will-change: transform;
+    transform: translateZ(0);
+    contain: layout style;
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.6)
+    );
+    backdrop-filter: blur(1px);
+    will-change: opacity;
+    pointer-events: none;
+}
+
+/* Landing Page Styles */
+.landing-page-wrapper {
+    position: relative;
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: var(--z-content);
+}
+
+.title-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle-text {
+    font-family: 'Monument Extended', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.upper-subtitle {
+    margin-bottom: 2rem;
+}
+
+.lower-subtitle {
+    margin-top: 2rem;
+    font-style: italic;
+}
+
+.main-title {
+    font-family: 'Monument Extended', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 
+        2px 2px 0 rgba(0, 255, 255, 0.1),
+        4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.path-line {
+    width: 18rem;
+    height: 2px;
+    position: relative;
+    margin-top: 2rem;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.4) 20%,
+        rgba(255, 255, 255, 0.4) 80%,
+        transparent
+    );
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.scroll-text {
+    font-family: 'Monument Extended', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.scroll-arrow {
+    color: rgba(255, 255, 255, 0.6);
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3));
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-arrow:hover {
+    color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.5));
+}
+
+@media (max-width: 768px) {
+    .main-title {
+        font-size: clamp(1.5rem, 5vw, 3.5rem);
+    }
+
+    .subtitle-text {
+        font-size: clamp(0.75rem, 2vw, 1rem);
+    }
+    
+    .path-line {
+        width: 8rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-title {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+    }
+}

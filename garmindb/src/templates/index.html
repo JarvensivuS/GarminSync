@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activities Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Garmin Activities Database</h1>
+    </header>
+    <div class="container">
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Activity ID</th>
+                        <th>Location Name</th>
+                        <th>Sport</th>
+                        <th>Start Time</th>
+                        <th>Distance (Km)</th>
+                        <th>Elapsed Time</th>
+                        <th>Average Speed (Km/h)</th>
+                        <th>Max Speed (Km/h)</th>
+                        <th>Calories</th>
+                        <th>Average HR</th>
+                        <th>Max HR</th>
+                        <th>Steps</th>
+                        <th>Aerobic Training Effect</th>
+                        <th>Training Load</th>
+                        <th>vO2 Max</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for activity in activities %}
+                    <tr>
+                        <td>{{ activity.activity_id }}</td>
+                        <td>{{ activity.locationName }}</td>
+                        <td>{{ activity.sport }}</td>
+                        <td>{{ activity.start_time }}</td>
+                        <td>{{ activity.distance }}</td>
+                        <td>{{ activity.elapsed_time }}</td>
+                        <td>{{ activity.avg_speed }}</td>
+                        <td>{{ activity.max_speed }}</td>
+                        <td>{{ activity.calories }}</td>
+                        <td>{{ activity.avg_hr }}</td>
+                        <td>{{ activity.max_hr }}</td>
+                        <td>{{ activity.steps }}</td>
+                        <td>{{ activity.training_effect }}</td>
+                        <td>{{ activity.training_load }}</td>
+                        <td>{{ activity.vO2MaxValue }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Activities Database</p>
+    </footer>
+</body>
+</html>
